@@ -1,0 +1,22 @@
+{
+  "esxi":
+  {
+    "host":       "lab-a",
+    "user":       "root",
+    "password":   "Opklnm90",
+    "vmname":     "tmpl-ubuntu-rke",
+    "vmhostname": "tmpl-ubuntu-1804-rke",
+    "datastore":  "datastore1",
+    "network":    "ClientNet",
+    "vmnic": [
+      {
+        "ip":            "10.64.201.12",
+        "netmask":       "19",
+        "gateway":       "10.64.192.1",
+        "dnsnameserver": "10.64.202.99",
+        "dnsdomain":     "conextrade.com",
+        "dnssearch":     "conextrade.com"
+      }
+    ]
+  }
+}

@@ -11,7 +11,7 @@ The base image is provisioned with bash script [ubuntu-18.04-rke.sh](https://git
 #### Provider "virtualbox"
   1. Create directory `mkdir "name of directory"`
   1. Goto directory `cd "name of directory"`
-  1. Create Vagrantfile `vagarnt init "elegoev/ubuntu-18.04-rke"`
+  1. Create Vagrantfile `vagrant init "elegoev/ubuntu-18.04-rke"`
   1. Start vagrant box `vagrant up`
 
 #### Provider "vmware_esxi"

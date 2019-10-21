@@ -15,4 +15,4 @@ DATE=`date +%Y%m%d%H%M`
 
 # get rke version
 RKE_INST_VERSION=$(rke --version | awk  '{print $3}' | tr --delete v)
-echo "$RKE_INST_VERSION.$DATE" > /vagrant/version
+echo "rke-$RKE_INST_VERSION" > /vagrant/version

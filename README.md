@@ -7,6 +7,15 @@ Used base image [elegoev/ubuntu-18.04-docker](https://app.vagrantup.com/elegoev/
 ### Automatic provisioning
 The base image is provisioned with bash script [ubuntu-18.04-rke.sh](https://github.com/elegoev/basebox-ubuntu-18.04-rke/blob/master/provisioning/ubuntu-18.04-rke.sh)
 
+### Configuration
+#### Required Vagrant Plugins
+- vagrant-disksize
+- vagrant-hosts
+- vagrant-secret
+- vagrant-share
+- vagrant-vbguest
+- vagrant-vmware-esxi
+
 ###  Create Vagrant Box Environment
 #### Provider "virtualbox"
 1. Create directory `mkdir "name of directory"`

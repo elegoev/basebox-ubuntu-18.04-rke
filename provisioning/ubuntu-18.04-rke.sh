@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set variables
-RKE_VERSION="1.0.5"
+RKE_VERSION="1.1.0"
 RKE_FILENAME="rke_linux-amd64"
 RKE_BINDIR="/usr/local/bin"
 

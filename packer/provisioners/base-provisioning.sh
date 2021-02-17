@@ -12,9 +12,6 @@ sudo wget -q -O /tmp/$RKE_FILENAME https://github.com/rancher/rke/releases/downl
 sudo mv /tmp/$RKE_FILENAME $RKE_BINDIR/rke
 sudo chmod +x $RKE_BINDIR/rke
 
-# get rke version
-echo "rke-$RKE_INST_VERSION" > /vagrant/version
-
 # install kubectl
 sudo snap install kubectl --classic
 

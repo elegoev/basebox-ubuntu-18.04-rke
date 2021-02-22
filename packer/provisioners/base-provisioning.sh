@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ -n "$1" ]; then
-  box_name=""
-else
-  box_name=$1
-fi
-
 application_file_path="/vagrant/installed-application.md"
 rancher_cluster_dir="/home/vagrant/rancher-rke-cluster"
 
@@ -29,24 +23,11 @@ sudo snap install helm --classic
 sudo mkdir ${rancher_cluster_dir}
 sudo chown vagrant:vagrant ${rancher_cluster_dir}
 
-# copy cluste config
+# copy cluster config
+ls -al /home/vagrant/
+ls -al /home/vagrant/files-prov
 sudo cp /home/vagrant/files-prov/rke/rancher-cluster.yml ${rancher_cluster_dir}/rancher-cluster.yml
 sudo chown vagrant:vagrant ${rancher_cluster_dir}/rancher-cluster.yml
-
-# copy private key
-echo ">>>>> boxname = ${box_name}"
-local_ssh_path="/home/vagrant/.ssh"
-ssh_source_key="/vagrant/.vagrant/machines/${box_name}/virtualbox/private_key"
-ssh_privkey_filename="id_rsa"
-ssh_authorized_key="authorized_keys"
-sudo cp $ssh_source_key $local_ssh_path/$ssh_privkey_filename
-sudo chown vagrant:vagrant $local_ssh_path/$ssh_privkey_filename
-sudo chmod 600 $local_ssh_path/$ssh_privkey_filename
-sudo chown vagrant:vagrant $local_ssh_path/$SSHPRIVKEYFILENAME
-sudo cat $local_ssh_path/$ssh_privkey_filename >> $local_ssh_path/$ssh_authorized_key
-
-# copy .ssh for root
-sudo cp -r $local_ssh_path /root
 
 # create cluster
 cd ${rancher_cluster_dir}

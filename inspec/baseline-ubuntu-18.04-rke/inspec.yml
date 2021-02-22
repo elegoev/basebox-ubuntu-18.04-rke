@@ -1,5 +1,5 @@
-name: basebox-ubuntu-18.04-rke
-title: profile for vagrant image ubuntu-18.04-rke
+name: basebox-ubuntu-18.04-k3s
+title: profile for vagrant image ubuntu-18.04-k3s
 maintainer: Urs Voegele
 copyright: Urs Voegele
 copyright_email: unext@bluewin.com

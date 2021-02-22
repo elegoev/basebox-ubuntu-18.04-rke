@@ -32,7 +32,11 @@
     {
       "type": "file",
       "source": "./packer/files-prov",
-      "destination": "/home/vagrant/files-prov"
+      "destination": "/home/vagrant"
+    },
+    {
+      "type": "shell",
+      "script": "./packer/provisioners/create-ssh-key.sh"
     },
     {
       "type": "shell",

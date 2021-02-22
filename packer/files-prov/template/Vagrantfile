@@ -3,6 +3,15 @@ Vagrant.configure("2") do |config|
   config.vm.define "source", autostart: false do |source|
 	  source.vm.box = "{{.SourceBox}}"
     source.vm.box_version = "3.0.1613669043"
+
+    source.vm.provider "virtualbox" do |vb|
+      vb.customize ["modifyvm", :id, "--memory", "4096" ]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+      vb.customize ["modifyvm", :id, "--groups", "/basebox-build" ]
+      vb.customize ["modifyvm", :id, "--vram", 256 ]
+    end  
+
 	  config.ssh.insert_key = {{.InsertKey}}
   end
 
@@ -13,8 +22,5 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "..", "/vagrant"
-
-  # file provisioning
-  config.vm.provision "file", source: "../../packer/files-prov", destination: "/home/vagrant/files-prov"
 
 end
